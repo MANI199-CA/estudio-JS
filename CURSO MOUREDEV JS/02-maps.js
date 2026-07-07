@@ -41,4 +41,5 @@ console.log( myMap.entries()) // ENTRIES devuelve keys-values  que contiene el m
 
 
 
-console.log
+console.log(myMap.get('vehiculo')); /* usamos get() para visualizar o obtener el valor de una propiedad escomo si hicieramos console.log(myMap.vehiculo) 
+                                    esto si fuera un objeto y no un map*/

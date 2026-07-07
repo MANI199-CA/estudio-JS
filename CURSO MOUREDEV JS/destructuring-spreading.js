@@ -58,3 +58,21 @@ nueva propiedad*/
 let objectMas= {...myObject, motor: 'estandar'};
 
 console.log(objectMas)
+
+
+
+const transaccion = {
+    id: 101,
+    monto: 450,
+    categoria: 'Moto',
+    fecha: '2026-07-06'
+};
+
+// Aplicamos destructuración y spreading:
+const { monto, fecha, ...resto } = transaccion;
+
+console.log(monto);
+console.log(fecha);
+console.log(resto);
+
+console.log('hola mundo')
