@@ -1,25 +1,25 @@
 /* clases/ usamos  class para crear objetos de una manera mas automatica funciona como un molde
 */
 
-class Animal{
-    constructor(name, lugar, alimentacion, sonido){/* la funcion constructor() recibe los parametros y los parametros por convencion se deben nombrar
-        igual a la nimbre de las propiedades del objetos o las keys */ 
+class Animal {
+    constructor(name, lugar, alimentacion, sonido) {/* la funcion constructor() recibe los parametros y los parametros por convencion se deben nombrar
+        igual a la nimbre de las propiedades del objetos o las keys */
         /*usamos this para llamar o crear las propiedades del objetos*/
         this.name = name;
-        this.lugar= lugar;
+        this.lugar = lugar;
         this.alimentacion = alimentacion;
         this.sonido = sonido;
-        
+
     }
-    
-    animalSuena(){
+
+    animalSuena() {
         console.log(`el ${this.name} ${this.sonido}`)
     }
 }
 
 
 // para poder usar el molde y crear variables usamos la palabra reservada new seguido del la clase
-let animal = new Animal('leon', 'africa', 'carnivoro','ruge');
+let animal = new Animal('leon', 'africa', 'carnivoro', 'ruge');
 
 animal.animalSuena()
 
@@ -27,14 +27,14 @@ console.log(animal)
 
 // clases con funciones
 
-class Person{
-    constructor(name, age, alias){
+class Person {
+    constructor(name, age, alias) {
         this.name = name;
         this.age = age;
         this.alias = alias
     }
 
-    walk(){
+    walk() {
         console.log('LA PERSONA CAMINA')
     }
 }
@@ -60,14 +60,14 @@ class PrivatePerson {
              constructor #propiedadPrivada seguido del nombre de la propiedad que queremos que sea privada y dentro del constructor usar igual # 
              en el this.#propiedadPrivada, si queremos usar la propiedad en algun mtodo dentro de la clase de igual modo debemos usar 
              this.#nombrePropiedadPrivada*/
-    constructor(name, age, alias,bank){
+    constructor(name, age, alias, bank) {
         this.name = name;
         this.age = age;
         this.alias = alias;
         this.#bank = bank;
     }
 
-    pay(){
+    pay() {
         this.#bank
     }
 }
@@ -91,28 +91,28 @@ class GetPerson {
     #alias
     #bank
 
-    constructor(name, age, alias, bank){
+    constructor(name, age, alias, bank) {
         this.#name = name;
         this.#age = age;
         this.#alias = alias;
         this.#bank = bank;
-        
+
     }
 
-    get name(){
+    get name() {
         return this.#name
-        
+
     }
-    get bank(){ // importante que el nombre de la funcion debe ser igual al nombre de la propiedad que queremos ver
-        return this.#bank 
+    get bank() { // importante que el nombre de la funcion debe ser igual al nombre de la propiedad que queremos ver
+        return this.#bank
     }
 
-    set bank(bank){
+    set bank(bank) {
         this.#bank = bank  // aqui reasignamos el valor de bank con el nuevo parametro
     }
 }
 
-let person3= new GetPerson('manuel', 26, 'mani', 1223333334444)
+let person3 = new GetPerson('manuel', 26, 'mani', 1223333334444)
 
 console.log(person3.bank)
 console.log(person3)
@@ -123,17 +123,21 @@ console.log(person3.bank)
 
 
 /*HERENCIA
-usamos extends para heredar propiedades y metodos de otra clase*/
+usamos extends para heredar propiedades y metodos de otra clase. si queremos generar nuevas propiedades en la clase hija
+dentro del constructor antes de crear las nuevas propiedades (this.propiedad) debemos llamar a las propiedades de la 
+clase padre usando el metodo super(aqui llamamos a todas las propiedades del padre) y dentro de los parametros del constructor tambien 
+debemos llamar a las propiedades padre y las propiedades nuevas o del hijo*/
 
-class Dog extends Animal{
+class Dog extends Animal {
 
-constructor(name, lugar, alimentacion, sonido, color) {
+    constructor(name, lugar, alimentacion, sonido, color) {
         // 2. ¡REGLA DE ORO! Primero llamamos al padre y le pasamos lo que nos pide
         super(name, lugar, alimentacion, sonido);
-        this.color= color;
+        this.color = color;
 
     }
-    accion(){
+
+    accion() {
         console.log(`el ${this.name} corre`)
     }
 }
@@ -144,3 +148,15 @@ console.log(nuevoPerro);
 
 nuevoPerro.animalSuena();
 nuevoPerro.accion();
+
+/*metodos estaticos*/
+
+class MathOperation {
+    static sum(a, b) {
+        return a + b
+    }
+}
+
+// no es necesario iunstanciar la clase osea crear una variable usando new NombreClase simpremente podemos llamar a la clase y su funcion
+console.log(
+    MathOperation.sum(3, 4))
