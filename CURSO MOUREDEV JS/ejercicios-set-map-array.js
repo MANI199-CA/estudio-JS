@@ -28,9 +28,41 @@
  console.log(camionAnimales);
 console.log(nuevoArray)
  //4. creaun set que almacene cinco libros
+ let libros = new Set ();
+ libros.add('padre rico, padre pobre')
+ libros.add('habitos atomicos')           
+ libros.add( 'como influir en las personas')           
+ libros.add('los cuadrantes del flujo de efectivo')           
+ libros.add('el arte que te valga madre')           
+console.log(libros)
  //5.añade dos mas. UNo de ellos repetido
+ libros.add('padre rico, padre pobre')
+ libros.add( 'la biblia')
+ console.log(libros)
  //6.elimina uno en concreto
+ libros.delete('padre rico, padre pobre')
+ console.log(libros)
  // 7. crea un mapa que asocie el numero del mes a su nombre
+ let mapMeses = new Map([
+    ['enero', 1],
+    ['febrero',2],
+    ['marzo',3]
+    ]
+ )
+
+ console.log(mapMeses)
  //8.comprueba si el mes numero 5 existe en el map e imprime el valor
+ console.log(mapMeses.has('mayo'))
  //9. añade al mapa una clave con un array que almacene los meses de verano
+ mapMeses.set('meses verano', ['junio', 'julio'])
+ console.log(mapMeses)
  //10. crea un array, transfrmaleo a un set y almacenalo en un array
+ let newArray = [ 'enero', 'febrero', 'mayo', ' enero'];
+
+ let mySett= new Set(newArray);
+
+ let arrayAlmacen = []
+
+ arrayAlmacen.push(mySett);
+
+ console.log(arrayAlmacen)

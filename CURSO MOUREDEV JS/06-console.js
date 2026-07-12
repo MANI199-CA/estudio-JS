@@ -84,4 +84,4 @@ funA()
 
 //clear
 
-// console.clear()
+// console.clear() //borra todo lo que se veia en consola

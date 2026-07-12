@@ -95,3 +95,5 @@ console.log(Number.isInteger('5'))
 console.log(Number.isInteger('hola'))
 console.log(Number.isInteger(5))
 console.log(Number.isInteger(5.5))
+
+
