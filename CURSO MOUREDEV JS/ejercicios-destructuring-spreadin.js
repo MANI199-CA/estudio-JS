@@ -50,4 +50,7 @@ console.log(personaje)
 let pasarDatos = {...personaje}
 
 console.log(pasarDatos)
-//10-combina destructuracion con propagacion
+//10-combina destructuracion con propagacion 
+let [aaa, ...resto] = animales
+console.log(resto)
+console.log(aaa)
